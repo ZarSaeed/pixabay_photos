@@ -71,19 +71,19 @@ fun PhotosGrid(
 fun PhotoGridItem(photo: Photo) {
     val alpha = 0.5f // adjust alpha value as needed
 
-    Box(modifier = Modifier.size(150.dp).padding(5.dp)) {
+    Box(modifier = Modifier.height(250.dp)
+        .width(150.dp).padding(5.dp)) {
         Image(
             painter = painterResource(R.drawable.kitty),
             contentDescription = null,
             contentScale = ContentScale.Crop,
             modifier = Modifier
-                .size(150.dp)
+                .height(250.dp)
                 .clip(RoundedCornerShape(8.dp))
                 .align(Center)
         )
         Column(modifier = Modifier
             .align(Alignment.BottomCenter)
-            .width(150.dp)
             .clip(RoundedCornerShape(0.dp, 0.dp, 8.dp, 8.dp))
             .background(Color.Black.copy(alpha = alpha))
             .padding(4.dp)) {
@@ -105,8 +105,7 @@ fun PhotoGridItem(photo: Photo) {
             }
 
             Row(
-                modifier = Modifier
-                    .width(150.dp),
+                modifier = Modifier,
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Image(
